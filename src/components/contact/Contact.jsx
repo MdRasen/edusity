@@ -7,7 +7,7 @@ import white_arrow from "../../assets/white-arrow.png";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <div className="contact-col">
         <h3>
           Send us a message
