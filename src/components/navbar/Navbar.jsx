@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import "./navbar.css";
 import logo from "../../assets/logo.png";
+import menu_icon from "../../assets/menu-icon.png";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -12,10 +13,15 @@ const Navbar = () => {
     });
   }, []);
 
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const toggleMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
+
   return (
     <nav className={`container ${sticky ? "dark-nav" : ""}`}>
       <img className="logo" src={logo} alt="logo" />
-      <ul>
+      <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
         <li>
           <Link to="hero" smooth={true} offset={0} duration={500}>
             Home
@@ -53,6 +59,12 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <img
+        src={menu_icon}
+        alt="menu_icon"
+        className="menu-icon"
+        onClick={toggleMenu}
+      />
     </nav>
   );
 };
