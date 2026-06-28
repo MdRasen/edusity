@@ -4,6 +4,7 @@ import mail_icon from "../../assets/mail-icon.png";
 import phone_icon from "../../assets/phone-icon.png";
 import location_icon from "../../assets/location-icon.png";
 import white_arrow from "../../assets/white-arrow.png";
+import Input from "../input/Input";
 
 const Contact = () => {
   return (
@@ -35,27 +36,27 @@ const Contact = () => {
       </div>
       <div className="contact-col">
         <form>
-          <label>Your Name</label>
-          <input
+          <Input
+            label="Your Name"
             type="text"
             placeholder="Enter your name"
             name="name"
-            required
           />
-          <label>Phone Number</label>
-          <input
-            type="text"
-            placeholder="Enter your phone number"
-            name="phone"
-            required
-          />
-          <label>Email</label>
-          <input
+
+          <Input
+            label="Your Email"
             type="email"
             placeholder="Enter your email"
             name="email"
-            required
           />
+
+          <Input
+            lable="Your Phone"
+            type="text"
+            placeholder="Enter your phone"
+            name="phone"
+          />
+
           <label>Message</label>
           <textarea
             name="message"

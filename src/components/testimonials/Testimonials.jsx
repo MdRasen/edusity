@@ -8,33 +8,46 @@ import user_3 from "../../assets/user-3.png";
 import user_4 from "../../assets/user-4.png";
 
 const Testimonials = () => {
+  const back_icon_ref = useRef(null);
+  const forward_icon_ref = useRef(null);
   const slider = useRef(null);
   const tx = useRef(0);
 
   const slideForward = () => {
     if (tx.current > -50) {
+      back_icon_ref.current.style.backgroundColor = "#212ea0";
       tx.current -= 25;
     }
-
     slider.current.style.transform = `translateX(${tx.current}%)`;
+
+    if (tx.current === -50) {
+      forward_icon_ref.current.style.backgroundColor = "#b4b4b4";
+    }
   };
 
   const slideBackward = () => {
     if (tx.current < 0) {
+      forward_icon_ref.current.style.backgroundColor = "#212ea0";
       tx.current += 25;
     }
 
     slider.current.style.transform = `translateX(${tx.current}%)`;
+
+    if (tx.current === 0) {
+      back_icon_ref.current.style.backgroundColor = "#b4b4b4";
+    }
   };
   return (
     <div className="testimonials">
       <img
+        ref={forward_icon_ref}
         src={next_icon}
         alt="next_icon"
         className="next-btn"
         onClick={slideForward}
       />
       <img
+        ref={back_icon_ref}
         src={back_icon}
         alt="back_icon"
         className="back-btn"

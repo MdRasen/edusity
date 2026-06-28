@@ -71,8 +71,8 @@
     padding: 0 40px;
   }
 
-  .next-btn,
-  .back-btn {
+  .testimonials .next-btn,
+  .testimonials .back-btn {
     padding: 10px;
     width: 35px;
   }
@@ -81,28 +81,34 @@
     padding: 10px;
   }
 
-  .slide {
+  .testimonials .slide {
     padding: 10px;
   }
 
-  .slide img {
+  .testimonials .slide img {
     width: 50px;
     border: 3px solid #212ea0;
   }
 }
 
 @media (max-width: 600px) {
-  .user-info {
+  .testimonials .user-info {
     display: block;
     margin-bottom: 10px;
     font-size: 12px;
   }
 
-  .user-info h3 {
+  .testimonials .user-info h3 {
     font-size: 16px;
   }
 
-  .slider p {
+  .testimonials .slider p {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 460px) {
+  .slider ul {
+    width: 400%;
   }
 }

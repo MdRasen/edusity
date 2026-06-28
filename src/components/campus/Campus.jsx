@@ -6,13 +6,30 @@ import gallery_4 from "../../assets/gallery-4.png";
 import white_arrow from "../../assets/white-arrow.png";
 
 const Campus = () => {
+  const gallery = [
+    {
+      image: gallery_1,
+      image_alt: "gallery_1",
+    },
+    {
+      image: gallery_2,
+      image_alt: "gallery_2",
+    },
+    {
+      image: gallery_3,
+      image_alt: "gallery_3",
+    },
+    {
+      image: gallery_4,
+      image_alt: "gallery_4",
+    },
+  ];
   return (
     <div className="campus" id="campus">
       <div className="gallery">
-        <img src={gallery_1} alt="gallery_1" />
-        <img src={gallery_2} alt="gallery_2" />
-        <img src={gallery_3} alt="gallery_3" />
-        <img src={gallery_4} alt="gallery_4" />
+        {gallery.map((image) => (
+          <img src={image.image} alt={image.image_alt} />
+        ))}
       </div>
 
       <button className="btn dark-btn">
